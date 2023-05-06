@@ -37,17 +37,3 @@
     transform: rotate(360deg);
   }
 }
-
-.map {
-  margin: 10px auto;
-  height: 600px;
-  width: 90%;
-}
-
-.leaflet-top {
-  top: 50px !important;
-}
-
-.leaflet-top, .leaflet-right {
-  display: none;
-}
