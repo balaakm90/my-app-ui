@@ -39,7 +39,15 @@
 }
 
 .map {
-  margin:50px auto;
+  margin: 10px auto;
   height: 600px;
-  width:1000px;
+  width: 90%;
+}
+
+.leaflet-top {
+  top: 50px !important;
+}
+
+.leaflet-top, .leaflet-right {
+  display: none;
 }
