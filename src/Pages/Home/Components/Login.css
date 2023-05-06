@@ -1,0 +1,31 @@
+.login-form {
+    padding: 20px;
+    padding-top: 40px;
+    padding-left: 30px;
+}
+
+.login-form input {
+    margin-left: 10px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.login-form input :hover {
+    border-color: blue;
+}
+
+.login-form tr {
+    margin-top: 10px;
+}
+
+.btn_login {
+    float: right;
+    margin-right: 35px;
+    margin-top: 20px;
+}
+
+.forgot {
+    float: left;
+    cursor: pointer;
+    margin-top: 20px;
+}

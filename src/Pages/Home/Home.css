@@ -1,0 +1,80 @@
+.home-body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background-color: yellow; */
+}
+
+.home-body-left-container {
+    width: 20%;
+    /* background-color: yellow; */
+}
+
+.home-body-right-container {
+    width: 20%;
+    /* background-color: pink; */
+}
+
+.home-body-middle-container {
+    width: 58%;
+    /* background-color: gray; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.home-body-left-container,
+.home-body-middle-container,
+.home-body-right-container {
+    float: left;
+    height: 100%;
+}
+
+.login-text {
+    float: right;
+}
+
+.login-link {
+    cursor: pointer;
+}
+
+.login-link :hover {
+    color: blue;
+}
+
+/* .modal-window {
+    position: absolute;
+    border: 2px solid #000;
+    background-color: gray;
+    box-shadow: 2px solid black;
+    height: 80;
+    width: 240;
+    margin: auto;
+    opacity: 0.4;
+} */
+
+.modal-popup {
+    width: 350px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid rgb(161, 160, 160);
+}
+
+.modal-header {
+    width: 100%;
+    height: 16%;
+}
+
+.modal-footer {
+    width: 100%;
+    height: 15%;
+}
+
+.modal-body {
+    width: 100%;
+    height: 70%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login-header-content {
+    font-size: 30px;
+    margin-left: 15px;
+}

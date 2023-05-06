@@ -5,10 +5,13 @@ import RoutingMachine from './Components/MapRouting'
 import './Map.css'
 import markerIconPng from "leaflet/dist/images/marker-icon-2x.png"
 import { Icon } from 'leaflet'
+import { Search } from './Components/Search';
+import { OpenStreetMapProvider } from 'leaflet-geosearch';
+import { RecenterMap } from './Components/RecenterMap';
 
 export function Map() {
-    const [centerLoc, setCenterLoc] = useState([13.088292, 79.668755]);
-    const [mapZoom, setMapZoom] = useState(14);
+    const [currentLocation, setCurrentLocation] = useState([0, 0]);
+    const [mapZoom, setMapZoom] = useState(18);
     const [routePoints, setRoutePoints] = useState(null);
     const [showDirectionControl, setShowDirectionControl] = useState(false);
     const txtSearch = useRef();
@@ -20,7 +23,7 @@ export function Map() {
     }
 
     function successFunction(position) {
-        setCenterLoc([position.coords.latitude, position.coords.longitude]);
+        setCurrentLocation([position.coords.latitude, position.coords.longitude]);
     }
 
     function errorFunction(error) {
@@ -28,8 +31,7 @@ export function Map() {
     }
 
     const setStateValues = (props) => {
-        setMapZoom(14);
-        //setCenterLoc([13.088292, 79.668755]);
+        //setCurrentLocation([13.088292, 79.668755]);
         setRoutePoints({
             routePoints: [
                 {
@@ -51,10 +53,13 @@ export function Map() {
     };
     const handleGetCurrentLoc = (props) => {
         getLocation();
+        setMapZoom(14);
     };
+
+
     useEffect(() => {
-        setStateValues();
-    }, [centerLoc]);
+        getLocation();
+    }, []);
     return (
         <div className='map-page'>
             <div className='map-page-left page-containers'>
@@ -82,14 +87,14 @@ export function Map() {
             </div>
             <div className='map-page-right page-containers'>
                 {
-                    (centerLoc != null) ? (
+                    (currentLocation != null) ? (
                         <div className='map-container'>
-                            <MapContainer className="map" center={centerLoc} zoom={mapZoom} scrollWheelZoom={true}>
+                            <MapContainer className="map" center={currentLocation} zoom={mapZoom} scrollWheelZoom={true}>
                                 <TileLayer
                                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                 />
-                                <Marker position={centerLoc} icon={new Icon({ iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41] })}>
+                                <Marker position={currentLocation} icon={new Icon({ iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41] })}>
                                     <Popup>
                                         Test
                                     </Popup>
@@ -97,8 +102,9 @@ export function Map() {
                                 {
                                     (routePoints != null) ? (<RoutingMachine routePoints={routePoints} />) : ('')
                                 }
+                                <Search provider={new OpenStreetMapProvider()} />
+                                <RecenterMap lat={currentLocation[0]} lng={currentLocation[1]} />
                             </MapContainer>
-
                         </div>
                     ) : ('')
                 }
