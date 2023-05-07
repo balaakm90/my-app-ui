@@ -4,22 +4,11 @@ import reportWebVitals from './reportWebVitals';
 import { Routing } from './Components/Routing';
 import './index.css';
 import { BrowserRouter, Link } from 'react-router-dom';
-
+import { getHeaderListItems } from './Generic/Functions';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const loadList = (props) => {
-  let listItems = [
-    {
-      name: 'Home',
-      path: 'Home'
-    }, {
-      name: 'Map',
-      path: 'Map'
-    }, {
-      name: 'Contact',
-      path: 'Contact'
-    }
-  ];
+  let listItems = getHeaderListItems();
   return (
     <ul className='header-list'>
       {

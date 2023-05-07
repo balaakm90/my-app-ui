@@ -10,8 +10,12 @@
     border-radius: 5px;
 }
 
-.login-form input :hover {
+.login-form input:hover {
     border-color: blue;
+}
+
+.forgot:hover {
+    color: blue;
 }
 
 .login-form tr {

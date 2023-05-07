@@ -33,6 +33,10 @@ code {
   cursor: pointer;
 }
 
+.header-list-item-anchor:hover {
+  color: blue;
+}
+
 .header-list-item-anchor {
   text-decoration: none;
   font-weight: 500;
@@ -61,4 +65,3 @@ code {
   color: rgb(153, 151, 151);
   z-index: 1;
 }
-

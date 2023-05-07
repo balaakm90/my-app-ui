@@ -1,0 +1,66 @@
+.blog-page {
+    width: 100%;
+    height: 100%;
+}
+
+.blog-page-left {
+    width: 20%;
+    height: 100%;
+}
+
+.blog-left-list {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.blog-page-right {
+    width: 79%;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.blog-page-left,
+.blog-page-right {
+    float: left;
+}
+
+.blog-add-controls {
+    width: 100%;
+    height: 10%;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.blog-add-link {
+    float: left;
+    font-size: 50px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.blog-add-link:hover {
+    color: blue;
+}
+
+.blog-add-text {
+    float: left;
+    margin-top: 23px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.blog-list {
+    width: 100%;
+    height: 90%;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+.blog-tile {
+    width: 80%;
+    margin: 10px auto;
+    padding: 5px;
+    padding-left: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
